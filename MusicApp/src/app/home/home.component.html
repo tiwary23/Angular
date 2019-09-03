@@ -1,0 +1,9 @@
+<h3>Top artists list</h3>
+<div *ngFor="let elements of datas.topartists.artist" id="home">
+  <img src="{{elements.image[2]['#text']}}">
+  <h4><a href="{{elements.url}}">{{elements.name}}</a></h4>
+</div>
+
+            
+
+

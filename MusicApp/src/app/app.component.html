@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      music app
+    </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="music">
+    <meta name="keywords" content="music site">
+    <meta name="author" content="Deepak">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../app/app.component.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+      <div class="container">
+          <div class=" navbar-header">
+              <a class="navbar-brand" id="website" href="#" routerLink="/home">music world</a>
+              <button type="button" id="collapse" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#responsive">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>   
+            </div>
+
+            <!-- collapse -->
+            
+            <div class="collapse navbar-collapse" id="responsive">
+                <ul class="nav navbar-nav " id="nav-font">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#" routerLink="/home">home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" routerLink="/favourite">favourite</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">products</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">help</a>
+                    </li> -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <form class="navbar-form " >
+                          <input #myinput type="search" class="form-control"> 
+                          <button class="btn btn-default" (click)="passString(myinput.value)"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                  <!-- </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" ><span class="glyphicon glyphicon-user"></span>my account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span>profile</a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-cog"></span>setting</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-off"></span>sin Out</a></li>
+                    </ul>
+                  </li> -->
+                </ul>
+              </div> 
+      </div>
+    </nav>
+    <section class="container" id="main">
+            <router-outlet></router-outlet>
+    </section>
+    <!-- footer -->
+    <footer class="container-fluid" id="footer">
+      <div class="container">
+          <div class="col-sm-2" id="copyright">
+              <h4>Copyright<span class="glyphicon glyphicon-copyright-mark"></span><span class="glyphicon glyphicon-registration-mark"></span></h4>
+            </div>
+            <!-- links -->
+            <div class="col-sm-2 pull-right" id="social-link">
+              <a href="#"><img src="assets/img/fb.png" alt="fb" id="footer-img1"></a>
+              <a href="#"><img src="assets/img/insta.png" alt="insta" id="footer-img2"></a>
+          </div>
+      </div>  
+    </footer>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>

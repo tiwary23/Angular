@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './service.service';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
     HomeComponent,
     PageNotFoundComponent,
     SearchComponent,
-    FavouriteComponent
+    FavouriteComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

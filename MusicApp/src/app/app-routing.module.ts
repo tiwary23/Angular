@@ -3,13 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
   
   {path:'home', component:HomeComponent},
-  // {path:'search', component:SearchComponent},
   {path:'search/:key', component:SearchComponent},
+  {path:'detail/:artist/:album', component:DetailComponent},
   {path:'', redirectTo:"/home", pathMatch:'full'},
   {path:"**", component:PageNotFoundComponent}
 

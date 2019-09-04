@@ -12,6 +12,7 @@ export class ServiceService {
   public _urlAlbum: string;
   public _urlArtist: string;
   public _urlTrack: string;
+  public _urlDetail:string;
   constructor(private http: HttpClient) { }
 
   getdata(): Observable <apiData[]>{
@@ -26,12 +27,19 @@ export class ServiceService {
   // getSearchTrack():Observable <any[]>{
   //   return this.http.get<any[]>(this._urlAlbum)
   // }
+  getSearchDetail():Observable<any[]>{
+      return this.http.get<any[]>(this._urlDetail);
+  }
   getsearch(value:string)
   {
     console.log(value);
     this._urlAlbum="http://ws.audioscrobbler.com/2.0/?method=album.search&album="+value+"&api_key=c3910e8ae45bbeb436b05a75dcc0d048&format=json"
     // this._urlArtist="http://ws.audioscrobbler.com/2.0/?method=artist.search&artist="+value+"&api_key=c3910e8ae45bbeb436b05a75dcc0d048&format=json"
     // this._urlTrack="http://ws.audioscrobbler.com/2.0/?method=track.search&track="+value+"&api_key=c3910e8ae45bbeb436b05a75dcc0d048&format=json"
+  }
+  getDetails(album,artist){
+    this._urlDetail="http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=c3910e8ae45bbeb436b05a75dcc0d048&artist"+artist+"&album="+album+"&format=json"
+
   }
   
 }

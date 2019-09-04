@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ServiceService } from '../service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Key } from 'protractor';
 
 
@@ -14,12 +14,16 @@ export class SearchComponent implements OnInit {
   
   public j;
   public searchData=[];
+  public searchalbum;
+  public searchartist;
   // public searchDataArtist=[];
   // public searchDataTrack=[];
 
+ 
+
   
   
-  constructor(private service: ServiceService, private router:ActivatedRoute) { }
+  constructor(private service: ServiceService, private router:ActivatedRoute, private route:Router) { }
 
   ngOnInit() {
     
@@ -32,5 +36,10 @@ export class SearchComponent implements OnInit {
     // this.service.getSearchTrack().subscribe( data3=> this.searchDataTrack = data3);
   }
 
-  
+   details(album, artist){
+    this.searchalbum=album;
+    this.searchartist=artist;
+    console.log(this.searchalbum,this.searchartist);
+    this.route.navigateByUrl(`detail/${album}/${artist}`);
+  }
 }

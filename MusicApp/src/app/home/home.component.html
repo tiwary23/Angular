@@ -1,14 +1,16 @@
 <section class="col-sm-12" id="hero">
+  <!-- hero-image -->
   <img id="hero" src="../assets/img/music_hero.jpg" alt="music_hero" width=100%>
 </section>
+<!-- home page topartists  -->
 <Section class="col-sm-12">
   <h3>Top artists list</h3>
-  <div id="display">
+  <article id="display">
     <div id="display-item" *ngFor="let elements of datas.topartists.artist">
-      <img class="thumbnail" src="{{elements.image[2]['#text']}}">
+      <img class="thumbnail" src="{{elements.image[2]['#text']}}" alt="{{elements.name}}">
       <h4 ><a href="{{elements.url}}">{{elements.name}}</a></h4>
     </div>
-  </div>
+  </article>
 </Section>
 
   

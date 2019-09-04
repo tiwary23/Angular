@@ -1,1 +1,23 @@
-<p>favourite works!</p>
+<section id="fav">
+    <article *ngFor="let favDatas of favData">
+        <div class="col-sm-12 well">
+            <figure class="col-sm-4">
+                <img class="img-responsive thumbnail" src="{{favDatas.album.image[2]['#text']}}"  id="detail-img" width=100%>
+            </figure>
+            <div class="col-sm-8">
+                <h5>Name:</h5><p>{{favDatas.album.name}}</p>
+                <h5>Artist:</h5><p>{{favDatas.album.artist}}</p>
+                <h5>Published:</h5><p>{{favDatas.album.wiki.published}}</p>
+                <h5>Summary:</h5><p>{{favDatas.album.wiki.summary}}</p>
+                <h5>Id:{{favDatas.id}}</h5><p></p>            
+                <button class="btn btn-default" type="button" (click)=deleteFav(favDatas.id)>Delete from Favourite</button>  
+                
+            </div>
+        </div>
+         
+    </article>
+       
+</section>
+
+
+

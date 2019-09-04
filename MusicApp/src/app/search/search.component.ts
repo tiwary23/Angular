@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Key } from 'protractor';
+import { searchDetail } from '../searchDetail';
 
 
 @Component({
@@ -12,10 +13,10 @@ import { Key } from 'protractor';
 export class SearchComponent implements OnInit {
 
   
-  public j;
-  public searchData=[];
-  public searchalbum;
-  public searchartist;
+  public j: string;
+  public searchData;
+  public searchalbum: any;
+  public searchartist: any;
   // public searchDataArtist=[];
   // public searchDataTrack=[];
 
@@ -36,10 +37,10 @@ export class SearchComponent implements OnInit {
     // this.service.getSearchTrack().subscribe( data3=> this.searchDataTrack = data3);
   }
 
-   details(album, artist){
+   details(album: string, artist:string){
     this.searchalbum=album;
     this.searchartist=artist;
     console.log(this.searchalbum,this.searchartist);
-    this.route.navigateByUrl(`detail/${album}/${artist}`);
+    this.route.navigateByUrl(`detail/${this.searchalbum}/${this.searchartist}`);
   }
 }

@@ -1,2 +1,12 @@
-<h3>{{searchDetail.album.wiki.published}}</h3>
-<h3>{{searchDetail.album.wiki.summary}}</h3>
+<div class="col-sm-6">
+    <img src="{{searchDetail.album.image[3]['#text']}}" class="thumbnail" id="detail-img" width=100%>
+</div>
+<div class="col-sm-6">
+    <h3>Name</h3><p>{{searchDetail.album.name}}</p>
+    <h3>Artist</h3><p>{{searchDetail.album.artist}}</p>
+    <h3>Published</h3><p>{{searchDetail.album.wiki.published}}</p>
+    <h3>Summary </h3><p>{{searchDetail.album.wiki.summary}}</p>
+<button type="button" class="btn btn-default" (click)=addFav(searchDetail)>Add to Favourite</button>
+</div>
+
+

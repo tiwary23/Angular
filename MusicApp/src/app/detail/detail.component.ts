@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../service.service';
+import { HttpClient } from '@angular/common/http';
+import { favourite } from '../favourite';
 
 @Component({
   selector: 'app-detail',
@@ -11,8 +13,11 @@ export class DetailComponent implements OnInit {
 
   public searArt;
   public searAlb;
-  public searchDetail=[];
-  constructor(private router:ActivatedRoute, private service:ServiceService) { }
+  public urlFav="http://localhost:3000/album";
+  public searchDetail:any=[];
+  constructor(private router:ActivatedRoute, private service:ServiceService, private http:HttpClient) { }
+
+  
 
   ngOnInit() {
 
@@ -24,4 +29,8 @@ export class DetailComponent implements OnInit {
     this.service.getSearchDetail().subscribe(data => this.searchDetail = data);
   }
 
+  addFav(){
+    console.log(this.searchDetail);
+    this.http.post<any[]>(this.urlFav,this.searchDetail).subscribe();
+    }
 }

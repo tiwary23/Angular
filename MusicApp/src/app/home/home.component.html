@@ -1,8 +1,19 @@
-<h3>Top artists list</h3>
-<div *ngFor="let elements of datas.topartists.artist" id="home">
-  <img src="{{elements.image[2]['#text']}}">
-  <h4><a href="{{elements.url}}">{{elements.name}}</a></h4>
-</div>
+<section class="col-sm-12" id="hero">
+  <img id="hero" src="../assets/img/music_hero.jpg" alt="music_hero" width=100%>
+</section>
+<Section class="col-sm-12">
+  <h3>Top artists list</h3>
+  <div id="display">
+    <div id="display-item" *ngFor="let elements of datas.topartists.artist">
+      <img class="thumbnail" src="{{elements.image[2]['#text']}}">
+      <h4 ><a href="{{elements.url}}">{{elements.name}}</a></h4>
+    </div>
+  </div>
+</Section>
+
+  
+
+
 
             
 

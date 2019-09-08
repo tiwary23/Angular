@@ -7,6 +7,7 @@
         published: string;
         summary: string;
         content: string;
+        comment: string;
     }
 
     export interface Album {
